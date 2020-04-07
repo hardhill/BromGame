@@ -14,20 +14,15 @@ export function Cliff(num, min, max) {
 }
 
 export function ChangeDirect(direct) {
-    var i = randomInteger(1, 10)
-    if (i > 9) {
+    var i = randomInteger(1, 100)
+    if (i > 95) {
         switch (direct) {
             case 0:
-                if (randomInteger(1, 10) > 5) { direct = 6 } else { direct = 2 }
-                console.log(direct)
-                break
-            case 2:
-                if (randomInteger(1, 10) > 5) { direct = 0 } else { direct = 4 }
-                break
             case 4:
                 if (randomInteger(1, 10) > 5) { direct = 6 } else { direct = 2 }
-                console.log(direct)
+            
                 break
+            case 2:
             case 6:
                 if (randomInteger(1, 10) > 5) { direct = 0 } else { direct = 4 }
                 break
@@ -39,5 +34,5 @@ export function ChangeDirect(direct) {
 
 export function RandomRGBA() {
     var o = Math.round, r = Math.random, s = 255;
-    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + '1.0'/*r().toFixed(1)*/ + ')';
 }
