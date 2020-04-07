@@ -9,7 +9,8 @@ export class Field {
         this.ctx.fillRect(0, 0, 800, 600);
         this.ctx.strokeStyle = 'rgb(0, 255, 0)';
         this.ctx.strokeRect(0, 0, 800, 600);
-        this.player = new Player();
+        this.playerOne = new Player();
+        this.playerTwo = new Player();
         setInterval(() => {
             this.Update()
         }, 16)
@@ -22,23 +23,24 @@ export class Field {
         this.layers = []
     }
 
-    DrawPlayer() {
-        var width = this.player.Fat * 4
-        var height = this.player.Fat * 4
-        var x = this.player.Position.x - width / 2
-        var y = this.player.Position.y - height / 2
+    DrawPlayer(player) {
+        var width = player.Fat * 4
+        var height = player.Fat * 4
+        var x = player.Position.x - width / 2
+        var y = player.Position.y - height / 2
 
         
-        this.ctx.fillStyle = this.player.Color
+        this.ctx.fillStyle = player.Color
         this.ctx.fillRect(x, y, width, height)
     }
 
     Update() {
-        //this.Clear()
-        this.DrawPlayer()
+        this.Clear()
+        this.DrawPlayer(this.playerOne)
+        this.DrawPlayer(this.playerTwo)
     }
 }
-
+//=========================================================================================================
 export class Player {
 
     constructor() {
@@ -47,7 +49,7 @@ export class Player {
             y: 300
         }
         this.Rast = 0
-        this.color = 'rgb(215,99,50)'
+        this.color = RandomRGBA()
         this.health = 100
         this.direction = 0
         this.speed = 2
