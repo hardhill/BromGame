@@ -1,5 +1,5 @@
 'use strict'
-import { randomInteger, Cliff, ChangeDirect, RandomRGBA } from './Util'
+import { randomInteger, Cliff, RandomRGBA } from './Util'
 export class Field {
 
     constructor(ctx) {
