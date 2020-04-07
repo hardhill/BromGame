@@ -103,9 +103,25 @@ export class Player {
         this.position.y = Cliff(this.position.y,20,600)
         this.position.x = Cliff(this.position.x,1,800)
         var m = this.direction
-        this.direction = ChangeDirect(this.direction)
+        this.Direction()
         if(m!=this.direction)
             this.color = RandomRGBA()
         
+    }
+
+    Direction(){
+        var i = randomInteger(1, 100)
+        if (i > 95) {
+            switch (this.direction) {
+                case 0:
+                case 4:
+                    if (randomInteger(1, 10) > 5) { this.direction = 6 } else { this.direction = 2 }
+                    break
+                case 2:
+                case 6:
+                    if (randomInteger(1, 10) > 5) { this.direction = 0 } else { this.direction = 4 }
+                    break
+            }
+        }
     }
 }

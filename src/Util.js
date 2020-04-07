@@ -14,22 +14,7 @@ export function Cliff(num, min, max) {
 }
 
 export function ChangeDirect(direct) {
-    var i = randomInteger(1, 100)
-    if (i > 95) {
-        switch (direct) {
-            case 0:
-            case 4:
-                if (randomInteger(1, 10) > 5) { direct = 6 } else { direct = 2 }
-            
-                break
-            case 2:
-            case 6:
-                if (randomInteger(1, 10) > 5) { direct = 0 } else { direct = 4 }
-                break
-        }
-    }
-
-    return direct
+    
 }
 
 export function RandomRGBA() {
