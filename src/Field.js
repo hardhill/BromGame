@@ -52,7 +52,7 @@ export class Player {
         this.direction = 0
         this.speed = 2
         this.born = new Date()
-        this.fat = 1
+        this.fat = 2
         setInterval(() => {
             this.Life()
         }, 16)
@@ -76,7 +76,7 @@ export class Player {
     Life() {
         // set speed
         this.speed = randomInteger(this.speed - 1, this.speed + 1)
-        this.speed = Cliff(this.speed,1,16)
+        this.speed = Cliff(this.speed,1,30)
         var U = this.speed * 0.016
         this.Rast += U
         //направления
