@@ -113,7 +113,7 @@ export class Player {
 
     Direction(){
         var i = randomInteger(1, 100)
-        if (i > 50) {
+        if (i > 97) {
             switch (this.direction) {
                 case 0:
                 case 4:
