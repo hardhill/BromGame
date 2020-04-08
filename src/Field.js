@@ -102,7 +102,7 @@ export class Player {
                 default:
             }
         }
-        this.position.y = Cliff(this.position.y,20,600)
+        this.position.y = Cliff(this.position.y,1,600)
         this.position.x = Cliff(this.position.x,1,800)
         var m = this.direction
         this.Direction()
@@ -113,7 +113,7 @@ export class Player {
 
     Direction(){
         var i = randomInteger(1, 100)
-        if (i > 95) {
+        if (i > 50) {
             switch (this.direction) {
                 case 0:
                 case 4:
