@@ -9,7 +9,10 @@ export class Field {
         this.ctx.fillRect(0, 0, 800, 600);
         this.ctx.strokeStyle = 'rgb(0, 255, 0)';
         this.ctx.strokeRect(0, 0, 800, 600);
+
         this.player = new Player();
+        this.player2 = new Player();
+
         setInterval(() => {
             this.Update()
         }, 16)
